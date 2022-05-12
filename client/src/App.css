@@ -1,3 +1,21 @@
 .App {
     text-align: center;
+    @apply w-screen;
+    @apply h-screen;
+    @apply grid;
+    @apply grid-cols-12;
+}
+
+.chat-box {
+    @apply col-span-10;
+    @apply w-full;
+    @apply bg-slate-600;
+}
+
+.user-list {
+    @apply col-span-2;
+    @apply w-full;
+    @apply bg-slate-700;
+    @apply border-l;
+    @apply border-gray-700;
 }
