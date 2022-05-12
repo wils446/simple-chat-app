@@ -1,13 +1,16 @@
-import Express from "express";
-import dotenv from "dotenv";
+import http from "http";
+import { Server } from "socket.io";
 
 async function main() {
-    dotenv.config({ path: ".env" });
+    const server = http.createServer();
+    const io = new Server(server);
 
-    const app = Express();
+    io.on("connection", (socket) => {
+        console.log("a user connected");
+    });
 
-    app.listen(process.env.PORT, () => {
-        console.log(`Server is running on port ${process.env.PORT}`);
+    server.listen(3000, () => {
+        console.log("Server started on port 3000");
     });
 }
 
